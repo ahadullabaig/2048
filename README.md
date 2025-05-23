@@ -1,46 +1,119 @@
-# Getting Started with Create React App
+# 2048 Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a modern implementation of the classic 2048 game built using **React** and **TypeScript**. The game features smooth tile animations, a clean user interface, and modular code organization. Players combine tiles with the same number to reach the 2048 tile while managing their score.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Smooth Tile Animations**: Tiles slide smoothly to their new positions when moved, enhancing the user experience.
+- **Type-Safe Code**: Written in TypeScript for robust type checking and maintainability.
+- **Modular Structure**: Components and utilities are organized into separate files for clarity and scalability.
+- **Responsive Design**: Styled with CSS modules for scoped, maintainable styles inspired by the original 2048 game.
+- **Score Tracking**: Displays the current score as tiles merge.
+- **Game Over Detection**: Alerts players when no valid moves remain.
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+my-2048-game/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── Tile.tsx
+│   │   ├── Tile.module.css
+│   │   ├── Board.tsx
+│   │   ├── Board.module.css
+│   │   ├── Game.tsx
+│   │   └── Game.module.css
+│   ├── utils/
+│   │   └── gameUtils.ts
+│   ├── App.tsx
+│   ├── index.tsx
+│   ├── index.css
+│   └── react-app-env.d.ts
+├── README.md
+├── package.json
+└── tsconfig.json
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **`components/`**: Contains React components for the game (`Tile`, `Board`, `Game`) with their respective CSS modules.
+- **`utils/gameUtils.ts`**: Handles game logic, including tile movement, merging, and game state management.
+- **`App.tsx`**: Entry point for the React application.
+- **`index.css`**: Global styles for centering and styling the game.
+- **`react-app-env.d.ts`**: TypeScript declarations for CSS modules.
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Node.js** (v14 or higher)
+- **npm** (v6 or higher)
 
-### `npm run build`
+## Setup Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the Repository** (if applicable):
+   ```bash
+   git clone <repository-url>
+   cd my-2048-game
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install Dependencies**:
+   Run the following command to install required packages:
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Start the Development Server**:
+   Launch the app in development mode:
+   ```bash
+   npm start
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser to play the game.
 
-### `npm run eject`
+4. **Build for Production** (optional):
+   Create an optimized production build:
+   ```bash
+   npm run build
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## How to Play
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Use the **arrow keys** (Up, Down, Left, Right) to move tiles on the 4x4 grid.
+- Tiles with the same number merge into a single tile with double the value (e.g., two 2s become a 4).
+- After each move, a new tile (value 2 or 4) appears in a random empty position.
+- The goal is to create a tile with the value **2048**.
+- The game ends when no valid moves are possible, displaying a "Game Over" alert.
+- Your score increases by the value of merged tiles.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Development Notes
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Tile Animations**: Tiles use CSS transitions (`transform: translate`) for smooth sliding effects, with a 200ms animation duration.
+- **TypeScript**: Ensures type safety for tile states and game logic, reducing runtime errors.
+- **CSS Modules**: Scoped styles prevent naming conflicts and improve maintainability.
+- **Game Logic**: The `gameUtils.ts` file manages tile-based state, movement, merging, and game-over conditions.
 
-## Learn More
+## Potential Enhancements
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Add a "New Game" button to reset the game state.
+- Implement persistent high-score tracking using local storage.
+- Enhance animations for tile merging (e.g., scale effects).
+- Add touch/swipe support for mobile devices.
+- Include a "Win" condition when reaching the 2048 tile.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Troubleshooting
+
+- **TypeScript Errors with CSS Modules**:
+  If you encounter `TS2307: Cannot find module './*.module.css'`, ensure `src/react-app-env.d.ts` contains:
+  ```typescript
+  declare module '*.module.css' {
+    const classes: { [key: string]: string };
+    export default classes;
+  }
+  ```
+  Then restart the development server (`npm start`).
+
+- **Animation Issues**: If tiles don’t animate smoothly, verify that the `transition` property in `Tile.module.css` is set correctly (`transition: transform 0.2s ease-in-out`).
+
+## Acknowledgments
+
+- Inspired by the original 2048 game by Gabriele Cirulli.
+- Built with [Create React App](https://create-react-app.dev/) and TypeScript.
