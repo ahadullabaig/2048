@@ -1,0 +1,17 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game h1 {
+  font-size: 48px;
+  color: #776e65;
+}
+
+.game p {
+  font-size: 24px;
+  color: #776e65;
+  margin-bottom: 20px;
+}
+
