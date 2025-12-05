@@ -95,7 +95,6 @@ export default function Tile({ value, gridX, gridY, isNew = false, isMerged = fa
         color={textColor}
         anchorX="center"
         anchorY="middle"
-        font="/fonts/Inter-Bold.woff"
         outlineWidth={0.02}
         outlineColor={tileColor.glow}
       >
