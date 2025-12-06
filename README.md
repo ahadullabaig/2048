@@ -1,269 +1,344 @@
-# 2048 Cyber Glass
+<div align="center">
 
-A stunning, next-generation implementation of the classic 2048 game featuring **3D graphics, glassmorphism aesthetics, and physics-based animations**. Built with modern web technologies to create a portfolio-worthy gaming experience.
+# 🎮 2048 CYBER GLASS
 
-![2048 Cyber Glass](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+### *Your childhood game, but make it cyberpunk*
+
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+**[🎮 Play Live Demo](#) • [⚡ Quick Start](#-quick-start) • [🧠 How It Works](#-how-it-works-for-the-curious)**
+
+---
+
+<!--
+TODO: Add hero GIF/screenshot here
+Recommended: Full gameplay showing 3D tiles, particles, bloom effects, and UI
+-->
+
+<img src="./public/gameplay.png" alt="2048 Cyber Glass Gameplay" />
+
+*2048 but we gave it a glow-up and taught it physics*
+
+</div>
+
+<!-- 
+## ✨ Not Your Average 2048 -->
+
+<!--
+TODO: Add showcase GIFs here
+Left: 3D gameplay with glassmorphic tiles
+Right: Particle effects on merge
+-->
+<!-- 
+<table>
+  <tr>
+    <td width="50%">
+      <img src="" alt="3D Gameplay" />
+      <p align="center"><i>3D glassmorphic tiles with real-time physics</i></p>
+    </td>
+    <td width="50%">
+      <img src="" alt="Particle Effects" />
+      <p align="center"><i>Particle explosions on merges</i></p>
+    </td>
+  </tr>
+</table> -->
+
+---
+
+## 🔥 Why This Hits Different
+
+### It's Actually 3D
+- Real-time **WebGL rendering** with Three.js (not fake 3D with CSS tricks)
+- Glassmorphic materials with light refraction (that "frosted glass" effect you see everywhere)
+- Bloom effects that make your GPU go brrrr
+- Camera shake when you merge big tiles (512+ gets VIOLENT)
+
+### Physics-Based Everything
+- Tiles don't just slide—they **spring** with real physics (mass, tension, friction)
+- React Spring animations that blend seamlessly when you spam arrow keys
+- Particle systems with gravity and velocity (because why not)
+- Camera shake intensity scales with merge value (4096 is an experience)
+
+### Sounds Like a Synthwave Album
+- **Zero audio files**—all sounds are procedurally generated in real-time
+- Higher tiles = higher pitch (logarithmic scaling for that sweet dopamine hit)
+- Web Audio API dual oscillators for harmonic richness
+- Win/loss jingles that actually slap
+
+### Actually Well-Architected
+- Game logic is **pure TypeScript** (zero React deps, 100% testable, framework-agnostic)
+- Rotation-based movement algorithm (one function handles all 4 directions—DRY king)
+- Undo stack with 10-move history
+- Settings persist to localStorage
+- Strict TypeScript mode (because we're not animals)
+
+---
+
+## ⚡ Quick Start
+
+**Prerequisites**: Node.js 18+ (that's it)
+
+```bash
+git clone https://github.com/ahadullabaig/2048.git
+cd 2048
+npm install
+npm run dev
+```
+
+Open `localhost:3000` and prepare for sensory overload 🚀
+
+### Controls
+- **Desktop**: Arrow keys (← → ↑ ↓)
+- **Mobile**: Swipe like it's 2013 Tinder
+- **Undo**: Because we all make mistakes
+- **Settings**: Toggle particles, change board size (3×3, 4×4, 5×5)
+
+---
+
+## 🛠️ Built With
+
+<div align="center">
+
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-## Features
+</div>
 
-### Visual Excellence
-- **3D Graphics**: Hardware-accelerated rendering using Three.js and React Three Fiber
-- **Glassmorphism Design**: Frosted glass tiles with transmission materials for depth and realism
-- **Bloom Effects**: Dynamic neon glow that intensifies during tile merges
-- **Particle System**: Explosive effects when tiles combine, with physics-based motion
-- **Camera Shake**: Reactive camera movement for high-value merges (512+)
-- **Chromatic Aberration**: Subtle RGB split for a cyberpunk aesthetic
-- **Physics-Based Animation**: React Spring for natural, weighted movement
-
-### Gameplay
-- **Classic 2048 Rules**: Merge tiles to reach 2048 (and beyond!)
-- **Multiple Board Sizes**: Play on 3×3, 4×4, or 5×5 grids
-- **Undo Functionality**: Revert your last move (up to 10 moves)
-- **Responsive Controls**:
-  - **Desktop**: Arrow keys
-  - **Mobile**: Swipe gestures with touch feedback
-- **Game State Persistence**: Best score saved to localStorage
-- **Win/Loss Detection**: Smart game-over detection with continue-after-win option
-
-### Audio
-- **Procedural Synthesis**: Web Audio API generates sounds dynamically
-- **Dynamic Pitch**: Tile values determine sound frequency (higher tiles = higher pitch)
-- **Rich Merge Sounds**: Dual-oscillator tones for depth
-- **Win/Loss Jingles**: Celebratory/consolation audio feedback
-
-### Polish
-- **TypeScript**: Fully typed codebase for reliability
-- **Zustand State Management**: Clean, performant state handling
-- **Glassmorphic UI**: Modern overlay with backdrop blur
-- **Responsive Design**: Works on desktop, tablet, and mobile
-- **60fps Performance**: Optimized for smooth gameplay
+**The Spicy Bits**:
+- **React Three Fiber** (React renderer for Three.js—because `<mesh>` beats imperative code)
+- **@react-three/drei** (helpers that save your sanity)
+- **@react-three/postprocessing** (bloom, chromatic aberration, all the shader goodness)
+- **React Spring** (physics-based animations, not janky CSS transitions)
+- **Zustand** (state management that doesn't make you want to flip tables)
 
 ---
 
-## Tech Stack
+## 🧠 How It Works (For the Curious)
 
-| Category | Technology |
-|----------|-----------|
-| **Language** | TypeScript 5.6 |
-| **Framework** | React 18 |
-| **Build Tool** | Vite 6.0 |
-| **3D Engine** | Three.js 0.169 |
-| **3D Framework** | React Three Fiber 8.17 |
-| **3D Helpers** | @react-three/drei 9.114 |
-| **Postprocessing** | @react-three/postprocessing 2.16 |
-| **Animation** | @react-spring/three 9.7 |
-| **State** | Zustand 5.0 |
-| **Styling** | TailwindCSS 3.4 |
+<details>
+<summary><b>🔄 Rotation-Based Movement Algorithm</b></summary>
 
----
+<br>
 
-## Project Structure
+Instead of writing 4 separate functions for up/down/left/right, we rotate the board to treat every move as "left", then rotate back:
 
-```
-2048/
-├── src/
-│   ├── components/
-│   │   ├── Game/          # 3D scene components
-│   │   │   ├── Scene.tsx
-│   │   │   ├── Board.tsx
-│   │   │   ├── Tile.tsx
-│   │   │   ├── TileGrid.tsx
-│   │   │   ├── Camera.tsx
-│   │   │   ├── Lighting.tsx
-│   │   │   ├── Effects.tsx    # Bloom, ChromaticAberration, Vignette
-│   │   │   └── Particles.tsx
-│   │   └── UI/            # HTML overlay components
-│   │       ├── HUD.tsx
-│   │       ├── Controls.tsx
-│   │       ├── GameOver.tsx
-│   │       ├── Settings.tsx
-│   │       └── MobileControls.tsx
-│   ├── logic/             # Pure game logic (no React)
-│   │   ├── constants.ts
-│   │   ├── boardUtils.ts
-│   │   └── gameLogic.ts
-│   ├── store/             # Zustand stores
-│   │   ├── gameStore.ts
-│   │   └── settingsStore.ts
-│   ├── hooks/             # Custom React hooks
-│   │   ├── useKeyboard.ts
-│   │   ├── useSwipe.ts
-│   │   ├── useGameAudio.ts
-│   │   └── useCameraShake.ts
-│   ├── theme/             # Visual configuration
-│   │   ├── colors.ts
-│   │   ├── materials.ts
-│   │   └── animations.ts
-│   └── utils/
-│       └── audio.ts       # Web Audio API synthesis
-```
-
----
-
-## Installation & Setup
-
-### Prerequisites
-- Node.js 18+ and npm
-
-### Steps
-
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd 2048
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-   The app will be available at `http://localhost:3000`
-
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
-   Output will be in the `dist/` folder
-
-5. **Preview production build**
-   ```bash
-   npm run preview
-   ```
-
----
-
-## How to Play
-
-### Desktop
-- Use **arrow keys** (↑ ↓ ← →) to move tiles
-- Press **Undo** to revert your last move
-- Click **New Game** to restart
-- Open **Settings** to change board size
-
-### Mobile
-- **Swipe** in any direction to move tiles
-- Tap **Undo** to revert your last move
-- Tap **New Game** to restart
-- Open **Settings** to change board size
-
-### Game Rules
-1. Tiles with the same number merge when they touch
-2. Each move spawns a new tile (2 or 4)
-3. Reach **2048** to win (but you can keep playing!)
-4. Game ends when no valid moves remain
-
----
-
-## Why This Implementation is Interesting
-
-### 1. **3D Web Graphics**
-Unlike traditional 2048 clones that use DOM manipulation or 2D Canvas, this implementation leverages **WebGL** through Three.js for hardware-accelerated rendering. This allows for:
-- Real-time lighting and shadows
-- Glass transmission materials (refraction)
-- Postprocessing effects (Bloom, DOF, Chromatic Aberration)
-
-### 2. **Physics-Based Animation**
-Instead of CSS transitions (`transition: all 0.3s ease`), this uses **React Spring** with spring physics:
 ```typescript
-{ mass: 1, tension: 170, friction: 26 }
+// src/logic/gameLogic.ts:93-141
+function move(board: Board, direction: Direction) {
+  const rotated = rotateToLeft(board, direction);
+  const moved = slideAndMerge(rotated);
+  return rotateBack(moved, direction);
+}
 ```
-This creates natural, weighted movement that blends seamlessly when interrupted.
 
-### 3. **Separation of Concerns**
-The game logic (`/logic/`) is **pure TypeScript** with no React dependencies:
-- Easy to test
-- Framework-agnostic
-- Portable to other platforms (React Native, game engines)
+This DRY approach eliminates code duplication while preserving merge coordinates. One function, four directions, zero headaches.
 
-The 3D rendering is completely decoupled from game state.
+</details>
 
-### 4. **Procedural Audio**
-No audio files—all sounds are generated in real-time using the **Web Audio API**:
+<details>
+<summary><b>🎵 Procedural Audio Synthesis</b></summary>
+
+<br>
+
+All sounds are generated live using the Web Audio API—no MP3s died in the making of this game:
+
 ```typescript
-oscillator.frequency.value = 200 + Math.log2(tileValue) * 100;
+// src/utils/audio.ts
+// Higher tiles = higher frequency
+const frequency = 200 + Math.log2(tileValue) * 80;
+oscillator.frequency.value = frequency;
 ```
-This creates dynamic, context-aware audio that scales with gameplay.
 
-### 5. **Modern Web Standards**
-- **TypeScript strict mode** for type safety
-- **Vite** for instant HMR and optimized builds
-- **ES2020+ features** (optional chaining, nullish coalescing)
-- **Tailwind CSS** for utility-first styling
+Merge sounds use dual oscillators at a perfect fifth interval (`frequency × 1.5`) for harmonic richness. It's like if Daft Punk made a 2048 clone.
+
+</details>
+
+<details>
+<summary><b>💎 Glassmorphism Materials</b></summary>
+
+<br>
+
+Tiles use `THREE.MeshPhysicalMaterial` with transmission and refraction for that frosted glass look:
+
+```typescript
+// src/theme/materials.ts
+{
+  transmission: 0.3,       // Glass transparency
+  ior: 1.5,                // Index of refraction (realistic glass)
+  metalness: 0.1,
+  roughness: 0.1,
+  emissive: tileColor,     // Inner glow
+  emissiveIntensity: 0.5   // Neon vibes
+}
+```
+
+Combined with bloom postprocessing, it creates that cyberpunk aesthetic that makes your eyes happy.
+
+</details>
+
+<details>
+<summary><b>💥 Particle System</b></summary>
+
+<br>
+
+20 particles spawn per merge using instanced meshes for performance:
+
+```typescript
+// src/components/Game/Particles.tsx
+// Physics-based animation with gravity
+position.y += velocity.y * deltaTime;
+velocity.y -= gravity * deltaTime;
+```
+
+Particles fade out over 0.5s with scale interpolation. Max pool: 500 particles (because we're responsible adults).
+
+</details>
+
+<details>
+<summary><b>📸 Camera Shake</b></summary>
+
+<br>
+
+High-value merges trigger camera shake with intensity scaling:
+
+```typescript
+// src/hooks/useCameraShake.ts
+const shakeIntensity = {
+  512: 0.05,
+  1024: 0.08,
+  2048: 0.12,
+  4096: 0.15  // 🫨
+};
+```
+
+Manual frame-based decay over 300ms. Merging 4096s feels *powerful*.
+
+</details>
 
 ---
 
-## Performance
+## 📁 Project Structure
 
-- **60fps** on modern hardware (tested on M1 MacBook, iPhone 13)
-- **~970KB** initial bundle (mostly Three.js, which is standard)
-- **Sub-100ms** time-to-interactive
-- **Lazy loading** for postprocessing effects
+```
+src/
+├── logic/              ← Pure game logic (zero React deps, fully testable)
+├── store/              ← Zustand state (board, settings, undo history)
+├── components/
+│   ├── Game/           ← 3D scene (tiles, camera, particles, lighting, effects)
+│   └── UI/             ← HTML overlay (HUD, controls, modals)
+├── hooks/              ← Keyboard, swipe, audio, camera shake
+├── theme/              ← Colors, materials, spring configs
+└── utils/              ← Web Audio API synthesis
+```
 
----
+**Philosophy**: Strict separation of concerns. Game logic is framework-agnostic, 3D rendering is decoupled from state. You could swap React for Vue tomorrow (but why would you).
 
-## Browser Support
-
-| Browser | Support |
-|---------|---------|
-| Chrome 90+ | ✅ Full |
-| Firefox 88+ | ✅ Full |
-| Safari 14+ | ✅ Full |
-| Edge 90+ | ✅ Full |
-| Mobile Safari | ✅ Full |
-| Chrome Android | ✅ Full |
-
-WebGL 2.0 required for postprocessing effects.
+See [`CLAUDE.md`](CLAUDE.md) for deep architectural docs (merge prevention, animation timing, lighting setup, etc.).
 
 ---
 
-## Roadmap / Future Enhancements
+## 🚀 Development
 
-- [ ] Leaderboard (with backend integration)
-- [ ] Multiple themes (synthwave, minimalist, brutalist)
-- [ ] Animation customization (toggle bloom, particles, shake)
-- [ ] Replay system (record and playback games)
-- [ ] AI solver mode
-- [ ] Accessibility improvements (screen reader, high contrast)
+### Commands
 
----
-
-## License
-
-MIT License - feel free to use this for your portfolio, modify it, or learn from it!
-
----
-
-## Credits
-
-- **Game Design**: Gabriele Cirulli (original 2048)
-- **Implementation**: Ahad
-- **Inspiration**: Cyberpunk aesthetics, glassmorphism design trends
-
----
-
-## Development
-
-### Scripts
 ```bash
-npm run dev      # Start dev server
-npm run build    # Build for production
+npm run dev      # Start dev server (localhost:3000)
+npm run build    # Production build (TypeScript check + Vite bundle)
 npm run preview  # Preview production build
-npm run lint     # Type-check with TypeScript
+npm run lint     # Type-check only (no emit)
 ```
 
-### Code Quality
-- **Strict TypeScript** enabled
-- **No unused variables** (enforced by tsconfig)
-- **Immutable state updates** (Zustand + pure functions)
-- **Modular architecture** (easy to extend)
+### Common Modifications
+
+- 🎨 **Change colors**: `src/theme/colors.ts` (tile colors, glow, environment)
+- 🎵 **Tweak audio**: `src/utils/audio.ts` (frequencies, oscillator types)
+- ⚙️ **Add board size**: Update `BOARD_SIZES` in `src/logic/constants.ts`
+- ✨ **New postprocessing effects**: Add to `<EffectComposer>` in `src/components/Game/Effects.tsx`
+- 🔧 **Spring physics**: Edit `SPRING_CONFIGS` in `src/theme/animations.ts`
+
+**Hot reload works for**: Logic changes, state updates, UI components, hooks
+**Requires refresh for**: Material changes, geometry modifications, shader updates
 
 ---
 
-**Built with care for the web. Star this repo if you found it useful!**
+## ⚡ Performance & Browser Support
+
+### Performance
+- **60fps** on modern devices (tested on M1 Mac, iPhone 13+)
+- **~970KB** initial bundle (mostly Three.js, which is standard for 3D web)
+- **Sub-100ms** time-to-interactive
+- **WebGL 2.0** required for postprocessing effects
+
+### Browser Support
+**Works on**: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+, all modern mobile browsers
+
+*Low-end device? Disable particles in settings for butter-smooth 60fps.*
+
+---
+
+## 🎯 Game Rules
+
+1. Use arrow keys (desktop) or swipe (mobile) to move tiles
+2. Tiles with the same number merge when they touch
+3. Each move spawns a new tile (90% chance of 2, 10% chance of 4)
+4. Reach **2048** to win (but you can keep playing!)
+5. Game ends when no valid moves remain
+
+**Pro tip**: The rotation algorithm means merges feel consistent in all directions. No weird edge cases.
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] Leaderboard with backend integration
+- [ ] Multiple themes (synthwave, minimalist, brutalist)
+- [ ] Animation customization panel (toggle bloom, particles, shake)
+- [ ] Replay system (record & playback games)
+- [ ] AI solver mode (watch the computer suffer)
+- [ ] Accessibility improvements (screen reader support, high contrast mode)
+
+Got ideas? Open an issue! Got code? Send a PR!
+
+---
+
+## 💝 Support This Project
+
+If this gave you ideas, made you go "wait, how?", or just made you smile:
+
+- ⭐ **Star this repo** (it feeds my dopamine receptors)
+- 🐦 **Share it** (flex on your followers)
+- 🐛 **Open issues** (but be nice, I have feelings)
+- 🍕 **Send pizza** (jk... unless?)
+
+---
+
+## 📜 License
+
+MIT © [Ahad](https://github.com/Ahad)
+
+Go wild, build cool stuff, just credit me when you make it big 🚀
+
+---
+
+## 🙏 Credits
+
+- **Original 2048**: [Gabriele Cirulli](https://github.com/gabrielecirulli/2048)
+- **This Cyberpunk Madness**: Ahad
+- **Inspiration**: Synthwave aesthetics, glassmorphism trends, and way too much caffeine
+
+---
+
+<div align="center">
+
+### Built with care, caffeine, and way too much bloom effect ✨
+
+**[⬆ back to top](#-2048-cyber-glass)**
+
+</div>
