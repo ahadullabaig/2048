@@ -10,7 +10,7 @@
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-**[🎮 Play Live Demo](#) • [⚡ Quick Start](#-quick-start) • [🧠 How It Works](#-how-it-works-for-the-curious)**
+**[🎮 Play Live Demo](https://2048-ahad.vercel.app/) • [⚡ Quick Start](#-quick-start) • [🧠 How It Works](#-how-it-works-for-the-curious)**
 
 ---
 
