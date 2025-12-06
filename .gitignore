@@ -25,3 +25,6 @@ dist-ssr
 
 #Playwright MCP
 .playwright-mcp/
+
+#CLI Agent init
+CLAUDE.md
