@@ -21,49 +21,49 @@ export default function Settings({ onClose }: SettingsProps) {
   };
 
   return (
-    <div className="absolute inset-0 flex items-center justify-center z-50 bg-black/50 backdrop-blur-sm">
-      <div className="glass p-8 rounded-2xl max-w-md w-full mx-4 border-2 border-white/30">
-        {/* Title */}
-        <h2 className="text-3xl font-bold mb-6 text-white cyber-glow">
-          Settings
-        </h2>
+    <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm overflow-y-auto">
+      <div className="flex min-h-full items-center justify-center p-4 text-center">
+        <div className="glass p-6 sm:p-8 rounded-2xl max-w-md w-full border-2 border-white/30 text-left relative transform transition-all">
+          {/* Title */}
+          <h2 className="text-3xl font-bold mb-6 text-white cyber-glow">
+            Settings
+          </h2>
 
-        {/* Board Size */}
-        <div className="mb-6">
-          <p className="text-white/80 mb-3 font-semibold">Board Size</p>
-          <div className="grid grid-cols-3 gap-3">
-            {BOARD_SIZES.map((size) => (
-              <button
-                key={size}
-                onClick={() => handleBoardSizeChange(size)}
-                className={`glass px-6 py-4 rounded-xl transition-all hover:bg-white/20 ${
-                  boardSize === size
+          {/* Board Size */}
+          <div className="mb-6">
+            <p className="text-white/80 mb-3 font-semibold">Board Size</p>
+            <div className="grid grid-cols-3 gap-2 sm:gap-3">
+              {BOARD_SIZES.map((size) => (
+                <button
+                  key={size}
+                  onClick={() => handleBoardSizeChange(size)}
+                  className={`glass px-3 py-2 sm:px-6 sm:py-4 rounded-xl transition-all hover:bg-white/20 ${boardSize === size
                     ? 'bg-cyan-500/20 border-2 border-cyan-500/80'
                     : 'border-2 border-white/20'
-                }`}
-              >
-                <span
-                  className={`font-bold text-lg ${
-                    boardSize === size ? 'text-cyan-400' : 'text-white'
-                  }`}
+                    }`}
                 >
-                  {size}×{size}
-                </span>
-              </button>
-            ))}
+                  <span
+                    className={`font-bold text-lg ${boardSize === size ? 'text-cyan-400' : 'text-white'
+                      }`}
+                  >
+                    {size}×{size}
+                  </span>
+                </button>
+              ))}
+            </div>
+            <p className="text-white/50 text-xs mt-2">
+              Note: Changing board size will start a new game
+            </p>
           </div>
-          <p className="text-white/50 text-xs mt-2">
-            Note: Changing board size will start a new game
-          </p>
-        </div>
 
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="w-full glass px-6 py-3 rounded-xl hover:bg-white/20 transition-all"
-        >
-          <span className="text-white font-semibold">Close</span>
-        </button>
+          {/* Close Button */}
+          <button
+            onClick={onClose}
+            className="w-full glass px-6 py-3 rounded-xl hover:bg-white/20 transition-all"
+          >
+            <span className="text-white font-semibold">Close</span>
+          </button>
+        </div>
       </div>
     </div>
   );
