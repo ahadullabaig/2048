@@ -12,6 +12,7 @@ import Board from './Board';
 import TileGrid from './TileGrid';
 import Effects from './Effects';
 import Particles from './Particles';
+import Starfield from './Starfield';
 import { useCameraShake } from '../../hooks/useCameraShake';
 
 export default function Scene() {
@@ -41,6 +42,9 @@ export default function Scene() {
 
       {/* Lights */}
       <Lighting />
+
+      {/* Starry Background */}
+      <Starfield />
 
       {/* Board */}
       <Board />

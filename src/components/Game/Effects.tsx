@@ -75,9 +75,9 @@ export default function Effects() {
         mipmapBlur
       />
 
-      {/* Chromatic Aberration - subtle RGB split for cyber feel */}
+      {/* Chromatic Aberration - very subtle RGB split for cyber feel */}
       <ChromaticAberration
-        offset={new THREE.Vector2(0.002, 0.002)}
+        offset={new THREE.Vector2(0.0008, 0.0008)}
         radialModulation={false}
         modulationOffset={0}
         blendFunction={BlendFunction.NORMAL}
