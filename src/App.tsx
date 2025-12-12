@@ -23,9 +23,16 @@ function App() {
       {/* 3D Scene */}
       <Scene />
 
-      {/* UI Overlay */}
-      <HUD />
-      <Controls />
+      {/* Responsive Header - HUD + Controls */}
+      <header className="absolute top-0 left-0 right-0 z-10 p-2 sm:p-4">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
+          {/* Stats (Score, Best, Moves) */}
+          <HUD />
+          {/* Controls (Undo, Settings, New Game) */}
+          <Controls />
+        </div>
+      </header>
+
       <MobileControls />
       <GameOver />
     </div>
