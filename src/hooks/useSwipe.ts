@@ -3,7 +3,7 @@
  * Detects swipe gestures and triggers game moves
  */
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type RefObject } from 'react';
 import { useGameStore } from '../store/gameStore';
 import type { Direction } from '../logic/constants';
 
@@ -16,12 +16,13 @@ interface TouchPoint {
 const SWIPE_THRESHOLD = 50; // Minimum distance for swipe (px)
 const SWIPE_TIMEOUT = 500; // Maximum time for swipe (ms)
 
-export function useSwipe(element?: HTMLElement | null) {
+export function useSwipe(elementRef?: RefObject<HTMLElement | null>) {
   const move = useGameStore((state) => state.move);
   const touchStart = useRef<TouchPoint | null>(null);
 
   useEffect(() => {
-    const target = element || document.body;
+    // Read .current inside effect to get the actual element after mount
+    const target = elementRef?.current || document.body;
 
     const handleTouchStart = (e: TouchEvent) => {
       const touch = e.touches[0];
@@ -84,5 +85,5 @@ export function useSwipe(element?: HTMLElement | null) {
       target.removeEventListener('touchend', handleTouchEnd);
       target.removeEventListener('touchmove', handleTouchMove);
     };
-  }, [element, move]);
+  }, [elementRef, move]);
 }

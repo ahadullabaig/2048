@@ -10,6 +10,7 @@ export function useGameAudio() {
   const lastMerges = useGameStore((state) => state.lastMerges);
   const gameStatus = useGameStore((state) => state.gameStatus);
   const prevGameStatusRef = useRef<string>('playing');
+  const mergeTimeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   // Resume audio context on first user interaction
   useEffect(() => {
@@ -33,14 +34,25 @@ export function useGameAudio() {
 
   // Play merge sounds
   useEffect(() => {
+    // Clear any pending timeouts from previous merges
+    mergeTimeoutsRef.current.forEach(clearTimeout);
+    mergeTimeoutsRef.current = [];
+
     if (lastMerges.length > 0) {
       // Play sounds for all merges (with slight delay between them)
       lastMerges.forEach((merge, index) => {
-        setTimeout(() => {
+        const timeoutId = setTimeout(() => {
           playMergeSound(merge.value);
         }, index * 50);
+        mergeTimeoutsRef.current.push(timeoutId);
       });
     }
+
+    return () => {
+      // Cleanup on unmount or before next effect run
+      mergeTimeoutsRef.current.forEach(clearTimeout);
+      mergeTimeoutsRef.current = [];
+    };
   }, [lastMerges]);
 
   // Play win/lose sounds

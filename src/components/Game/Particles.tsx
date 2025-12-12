@@ -83,7 +83,7 @@ export default function Particles() {
         }
       }
     }
-  }, [lastMerges]);
+  }, [lastMerges, boardSize]);
 
   // Update particles each frame
   useFrame((_state, delta) => {

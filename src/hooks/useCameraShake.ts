@@ -15,6 +15,7 @@ export function useCameraShake() {
   const [shake, setShake] = useState<ShakeConfig | undefined>(undefined);
   const lastMerges = useGameStore((state) => state.lastMerges);
   const prevMergesRef = useRef(lastMerges);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     // Only trigger on new merges
@@ -29,8 +30,13 @@ export function useCameraShake() {
           duration: 300, // ms
         });
 
+        // Clear any existing timeout
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+
         // Clear shake after animation
-        setTimeout(() => {
+        timeoutRef.current = setTimeout(() => {
           setShake(undefined);
         }, 300);
       }
@@ -38,6 +44,15 @@ export function useCameraShake() {
 
     prevMergesRef.current = lastMerges;
   }, [lastMerges]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return shake;
 }

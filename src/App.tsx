@@ -13,7 +13,7 @@ function App() {
 
   // Initialize input handlers
   useKeyboard();
-  useSwipe(containerRef.current);
+  useSwipe(containerRef);
 
   // Initialize audio
   useGameAudio();

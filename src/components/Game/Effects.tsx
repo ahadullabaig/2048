@@ -21,6 +21,7 @@ export default function Effects() {
       const startTime = Date.now();
       const duration = BLOOM_INTENSITY.mergeDuration;
       const peakIntensity = BLOOM_INTENSITY.mergePeak;
+      let animationFrameId: number | null = null;
 
       const animate = () => {
         const elapsed = Date.now() - startTime;
@@ -42,13 +43,23 @@ export default function Effects() {
         }
 
         if (progress < 1) {
-          requestAnimationFrame(animate);
+          animationFrameId = requestAnimationFrame(animate);
         } else if (bloomRef.current) {
           bloomRef.current.intensity = baseIntensity;
         }
       };
 
       animate();
+
+      return () => {
+        if (animationFrameId !== null) {
+          cancelAnimationFrame(animationFrameId);
+        }
+        // Reset bloom intensity on cleanup
+        if (bloomRef.current) {
+          bloomRef.current.intensity = baseIntensity;
+        }
+      };
     }
   }, [lastMerges, baseIntensity]);
 
