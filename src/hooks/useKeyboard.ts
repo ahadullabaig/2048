@@ -9,15 +9,34 @@ import type { Direction } from '../logic/constants';
 
 export function useKeyboard() {
   const move = useGameStore((state) => state.move);
+  const undo = useGameStore((state) => state.undo);
+  const canUndo = useGameStore((state) => state.canUndo);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Map arrow keys to directions
+      // Handle Undo (Ctrl+Z or Cmd+Z)
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'z') {
+        if (canUndo) {
+          e.preventDefault();
+          undo();
+        }
+        return;
+      }
+
+      // Map keys to directions
       const keyMap: Record<string, Direction> = {
         ArrowUp: 'up',
         ArrowDown: 'down',
         ArrowLeft: 'left',
         ArrowRight: 'right',
+        w: 'up',
+        W: 'up',
+        s: 'down',
+        S: 'down',
+        a: 'left',
+        A: 'left',
+        d: 'right',
+        D: 'right',
       };
 
       const direction = keyMap[e.key];
@@ -33,5 +52,5 @@ export function useKeyboard() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [move]);
+  }, [move, undo, canUndo]);
 }

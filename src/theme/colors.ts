@@ -156,8 +156,8 @@ export const UI_COLORS = {
  * Get appropriate text color for a tile (dark text on light tiles)
  */
 export function getTileTextColor(value: TileValue): string {
-  // Use dark text for very bright tiles (512+)
-  if (value >= 512) {
+  // Use dark text for very bright tiles (Cyan, Gold, Yellow, White, Pastels)
+  if (value === 2 || value >= 256) {
     return '#0a0a0f';
   }
   return '#ffffff';

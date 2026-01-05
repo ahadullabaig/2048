@@ -1,0 +1,17 @@
+{
+  "name": "2048 Cyber Glass",
+  "short_name": "2048 Cyber",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#050510",
+  "theme_color": "#00d9ff",
+  "description": "A stunning 3D implementation of 2048 with cyber-glass aesthetics",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "orientation": "portrait"
+}

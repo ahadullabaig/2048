@@ -4,6 +4,7 @@
  */
 
 import { useGameStore } from '../../store/gameStore';
+import { useSettingsStore } from '../../store/settingsStore';
 import type { BoardSize } from '../../logic/constants';
 import { BOARD_SIZES } from '../../logic/constants';
 
@@ -15,9 +16,15 @@ export default function Settings({ onClose }: SettingsProps) {
   const boardSize = useGameStore((state) => state.boardSize);
   const setBoardSize = useGameStore((state) => state.setBoardSize);
 
+  const {
+    audioEnabled, setAudioEnabled,
+    showParticles, setShowParticles,
+    showGrid, setShowGrid
+  } = useSettingsStore();
+
   const handleBoardSizeChange = (size: BoardSize) => {
     setBoardSize(size);
-    onClose();
+    // We don't close immediately so user can change other settings
   };
 
   return (
@@ -54,6 +61,45 @@ export default function Settings({ onClose }: SettingsProps) {
             <p className="text-white/50 text-xs mt-2">
               Note: Changing board size will start a new game
             </p>
+          </div>
+
+          {/* Visual Settings */}
+          <div className="mb-6 space-y-3">
+            <p className="text-white/80 font-semibold">Visuals</p>
+            
+            <label className="flex items-center justify-between glass p-3 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
+              <span className="text-white">Particles</span>
+              <div 
+                className={`w-12 h-6 rounded-full p-1 transition-colors ${showParticles ? 'bg-cyan-500/50' : 'bg-white/10'}`}
+                onClick={(e) => { e.preventDefault(); setShowParticles(!showParticles); }}
+              >
+                <div className={`w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${showParticles ? 'translate-x-6' : 'translate-x-0'}`} />
+              </div>
+            </label>
+
+            <label className="flex items-center justify-between glass p-3 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
+              <span className="text-white">Grid Lines</span>
+              <div 
+                className={`w-12 h-6 rounded-full p-1 transition-colors ${showGrid ? 'bg-cyan-500/50' : 'bg-white/10'}`}
+                onClick={(e) => { e.preventDefault(); setShowGrid(!showGrid); }}
+              >
+                <div className={`w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${showGrid ? 'translate-x-6' : 'translate-x-0'}`} />
+              </div>
+            </label>
+          </div>
+
+          {/* Audio Settings */}
+          <div className="mb-8">
+            <p className="text-white/80 font-semibold mb-3">Audio</p>
+            <label className="flex items-center justify-between glass p-3 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
+              <span className="text-white">Sound Effects</span>
+              <div 
+                className={`w-12 h-6 rounded-full p-1 transition-colors ${audioEnabled ? 'bg-cyan-500/50' : 'bg-white/10'}`}
+                onClick={(e) => { e.preventDefault(); setAudioEnabled(!audioEnabled); }}
+              >
+                <div className={`w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${audioEnabled ? 'translate-x-6' : 'translate-x-0'}`} />
+              </div>
+            </label>
           </div>
 
           {/* Close Button */}
