@@ -10,42 +10,15 @@
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-**[🎮 Play Live Demo](https://2048-ahad.vercel.app/) • [⚡ Quick Start](#-quick-start) • [🧠 How It Works](#-how-it-works-for-the-curious)**
+**[Play Live Demo](https://2048-ahad.vercel.app/) • [How It Works](#-how-it-works-for-the-curious)**
 
 ---
-
-<!--
-TODO: Add hero GIF/screenshot here
-Recommended: Full gameplay showing 3D tiles, particles, bloom effects, and UI
--->
 
 <img src="./public/gameplay.png" alt="2048 Cyber Glass Gameplay" />
 
 *2048 but we gave it a glow-up and taught it physics*
 
 </div>
-
-<!-- 
-## ✨ Not Your Average 2048 -->
-
-<!--
-TODO: Add showcase GIFs here
-Left: 3D gameplay with glassmorphic tiles
-Right: Particle effects on merge
--->
-<!-- 
-<table>
-  <tr>
-    <td width="50%">
-      <img src="" alt="3D Gameplay" />
-      <p align="center"><i>3D glassmorphic tiles with real-time physics</i></p>
-    </td>
-    <td width="50%">
-      <img src="" alt="Particle Effects" />
-      <p align="center"><i>Particle explosions on merges</i></p>
-    </td>
-  </tr>
-</table> -->
 
 ---
 
@@ -295,39 +268,25 @@ npm run lint     # Type-check only (no emit)
 
 ---
 
-## 🗺️ Roadmap
-
-- [ ] Leaderboard with backend integration
-- [ ] Multiple themes (synthwave, minimalist, brutalist)
-- [ ] Animation customization panel (toggle bloom, particles, shake)
-- [ ] Replay system (record & playback games)
-- [ ] AI solver mode (watch the computer suffer)
-- [ ] Accessibility improvements (screen reader support, high contrast mode)
-
-Got ideas? Open an issue! Got code? Send a PR!
-
----
-
 ## 💝 Support This Project
 
 If this gave you ideas, made you go "wait, how?", or just made you smile:
 
 - ⭐ **Star this repo** (it feeds my dopamine receptors)
-- 🐦 **Share it** (flex on your followers)
+- 🐦 **Share it**
 - 🐛 **Open issues** (but be nice, I have feelings)
-- 🍕 **Send pizza** (jk... unless?)
 
 ---
 
-## 📜 License
+## License
 
-MIT © [Ahad](https://github.com/Ahad)
+MIT © [Ahad](https://github.com/ahadullabaig)
 
 Go wild, build cool stuff, just credit me when you make it big 🚀
 
 ---
 
-## 🙏 Credits
+## Credits
 
 - **Original 2048**: [Gabriele Cirulli](https://github.com/gabrielecirulli/2048)
 - **This Cyberpunk Madness**: Ahad
@@ -338,7 +297,5 @@ Go wild, build cool stuff, just credit me when you make it big 🚀
 <div align="center">
 
 ### Built with care, caffeine, and way too much bloom effect ✨
-
-**[⬆ back to top](#-2048-cyber-glass)**
 
 </div>
