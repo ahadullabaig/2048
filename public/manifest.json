@@ -8,8 +8,8 @@
   "description": "A stunning 3D implementation of 2048 with cyber-glass aesthetics",
   "icons": [
     {
-      "src": "/vite.svg",
-      "type": "image/svg+xml",
+      "src": "/icon.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
